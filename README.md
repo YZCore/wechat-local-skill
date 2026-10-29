@@ -1,8 +1,8 @@
-# 微信本地工作流 Skill
+# 微信记录读取
 
-让 AI harness 读取、整理和分析 Windows 本机微信记录。支持复用已有环境，也能指导新用户从零部署。
+把这个 Skill 交给你用的 AI 助手，它会检查电脑上已有的软件，帮你装好读取工具，再读取微信里的聊天、图片、语音和附件。适用于 Windows 电脑版微信。
 
-[下载技能包](dist/wechat-local-skill.zip) · [技能入口](SKILL.md) · [本机复用](references/local-use.md) · [从零搭建](references/setup.md)
+[下载技能包](dist/wechat-local-skill.zip) · [安装说明](references/setup.md) · [常用操作](references/usage.md)
 
 ## 可以做什么
 
@@ -15,34 +15,34 @@
 - 指导手机历史迁移，比较迁移前后的消息。
 - 按账号维护会话及公众号排除规则。
 
-## 场景一：本机已有环境
+## 怎么开始
 
-将本仓库作为 `wechat-local` 技能安装到 harness 的技能目录，然后直接说：
+下载技能包，解压后把 `wechat-local` 文件夹放进 AI 助手的技能目录，然后说：
 
-> 使用 wechat-local 技能，检查本机已有环境并复用它，完成我的微信记录读取任务。
+> 使用 wechat-local，帮我装好微信记录读取工具。
 
-技能会先检查后端、索引及模型。已有 MCP 时使用 MCP；可以运行命令时也能通过统一 CLI 使用同一套功能。
+AI 会先检查环境，安装缺少的部分，再连接微信和准备语音模型。已有的程序和记录会继续使用。你需要在电脑版微信登录自己的账号。
 
-```powershell
-python "<技能目录>/scripts/wechat.py" doctor
-python "<技能目录>/scripts/wechat.py" call wechat_list_sessions --keyword 示例群 --limit 5
-python "<技能目录>/scripts/wechat.py" call wechat_list_media_messages --session 示例群 --kind image --limit 5
-```
-
-## 场景二：从零开始
-
-把技能包交给目标 harness，并说明：
-
-> 安装并使用这个技能。先判断我的系统、微信和已有软件，再一步一步搭建；已有的部分直接复用。
-
-Windows 入口：
+也可以在 PowerShell 里运行安装入口：
 
 ```powershell
 & "<技能目录>/scripts/start.ps1"
 & "<技能目录>/scripts/start.ps1" -Root D:/WeChatBridge -Apply
 ```
 
-按实际情况准备运行环境、部署后端、建立聊天索引、接通媒体、连接 harness，再加入 Obsidian 或微信流分享。具体步骤见[从零搭建](references/setup.md)。
+安装步骤见[安装说明](references/setup.md)。
+
+## 装好以后
+
+直接告诉AI你想看什么，例如：
+
+- 看看某个群最近发的5张图片。
+- 把某位好友最近的语音转成文字。
+- 找一下某人发来的表格，读读里面的内容。
+- 按我发送的消息数，列出前20个聊天对象。
+- 把一段聊天整理到Obsidian。
+
+常用命令和文件位置见[日常使用](references/usage.md)。
 
 ## 包内程序
 

@@ -50,8 +50,8 @@ def plan(root,python):
         media_index_present=(backend/'data/wechat-media-index.sqlite').is_file(),
         model_present=(backend/'models/faster-whisper-base/model.bin').is_file(),
         upstream_files_to_fetch=missing,
-        next_action='复用现有后端，用wechat.py doctor读取状态' if (backend/'read_group.py').is_file()
-        else '使用--apply部署后端，再运行wechat.py refresh建立本地索引')
+        next_action='程序已安装；运行wechat.py doctor查看记录状态' if (backend/'read_group.py').is_file()
+        else '加--apply安装程序，再运行wechat.py refresh读取微信记录')
 
 
 def run(command,**kwargs):
