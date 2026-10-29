@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信工作流搭建与读取"
+  short_description: "复用现有环境或从零搭建微信聊天、朋友圈与多媒体读取工作流"
+  default_prompt: "使用 $wechat-local 判断现有环境，复用或逐步搭建微信读取能力，再完成我的任务。"
