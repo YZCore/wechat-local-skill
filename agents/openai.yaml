@@ -1,4 +1,4 @@
 interface:
-  display_name: "微信记录读取"
-  short_description: "安装微信读取工具，查看聊天、图片和附件，转写语音并统计消息"
-  default_prompt: "使用 $wechat-local 帮我装好微信读取工具，再完成记录查询或媒体读取。"
+  display_name: "微信聊天记录 · WeChat"
+  short_description: "通过 MCP 搜索微信聊天、查看图片、转写语音、统计消息并导出 Obsidian"
+  default_prompt: "使用 $wechat-local 连接本机微信，帮我查询聊天记录、读取媒体或导出笔记。"

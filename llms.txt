@@ -1,0 +1,24 @@
+# wechat-local
+
+> Agent Skill and local MCP / CLI for reading WeChat chat history on Windows: conversation search, message statistics, chat images, voice transcription, video frames, document reading, cached Moments, and Obsidian export.
+
+The skill directory is named `wechat-local`. Start with SKILL.md to choose an operation. The Windows installer reuses existing programs, prepares the backend, and writes a STDIO MCP configuration. The published package exposes 16 tools; the tool reference lists their arguments. Data comes from the current account's records saved on the computer.
+
+## Get started
+
+- [Skill entry point](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/SKILL.md): Task matching and the workflow an agent follows.
+- [Windows setup](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/references/setup.md): Environment discovery, installation, local indexing, speech model, and MCP configuration.
+- [Tool reference](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/references/tools.md): All 16 MCP / CLI tools, parameters, and returned content.
+- [Daily usage](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/references/usage.md): Search, media reading, statistics, CLI examples, and output locations.
+
+## Project overview
+
+- [中文介绍](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/README.md): Capabilities, quick start, common questions, and project structure.
+- [English overview](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/README.en.md): Capabilities, installation, and agent integration in English.
+- [Skill ZIP](https://github.com/YZCore/wechat-local-skill/raw/refs/heads/main/dist/wechat-local-skill.zip): Ready-to-install `wechat-local` directory, scripts, backend source, and documentation.
+
+## Optional
+
+- [Advanced operations](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/references/advanced.md): Obsidian, WeChatBridge sharing, phone history migration, and conversation exclusions.
+- [Upstream projects](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/THIRD_PARTY_NOTICES.md): Libraries and technical sources used by the backend.
+- [License](https://raw.githubusercontent.com/YZCore/wechat-local-skill/main/LICENSE): GPL-3.0.

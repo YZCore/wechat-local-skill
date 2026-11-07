@@ -1,6 +1,8 @@
-# 日常使用
+# 微信聊天搜索、媒体读取与 Obsidian 导出
 
 程序默认放在 `D:/WeChatBridge/auto-read`。如果安装时选了其他位置，命令中加 `--root <项目目录>`。
+
+[项目介绍](../README.md) · [安装教程](setup.md) · [MCP 工具参考](tools.md) · [技能入口](../SKILL.md)
 
 ## 连接AI助手
 
@@ -27,14 +29,14 @@ python "<技能目录>/scripts/wechat.py" report sessions
 
 ## 内容处理
 
-- 图片：从新到旧先选N条，不先过滤可用性；逐条读取，展示实际图片并简述内容。`original`、`mid`、`thumb`分别表示缓存档位；后两种不统一称为原图。
+- 图片：按新到旧选N条消息，逐条读取并展示内容。`original`、`mid`、`thumb`分别表示原图、压缩图和缩略图档位，按返回结果标注。
 - 语音：默认生成 WAV 和本地转写；`--transcribe false`只提取可播放音频。
 - 视频：默认提取3帧，可用 `--frames 1`至`6`；存在音轨时可转写。画面分析以返回的实际帧为依据。
 - 附件：PDF、DOC/DOCX、XLS/XLSX、PPT/PPTX及常见纯文本可读正文。DOC/PPT使用已有LibreOffice转换。其他格式仍返回可取回的文件。读取页数、行数及字符上限以返回结果为准。
-- 朋友圈：`wechat_query_moments`返回正文、评论和媒体元数据；聊天媒体解码成功不代表朋友圈原图已一并获取。朋友圈媒体另按实际缓存匹配，保留候选状态。
+- 朋友圈：`wechat_query_moments`返回本机已缓存帖子的正文、评论和媒体元数据；媒体关联按返回的实际缓存状态处理。
 
 ## 统计与输出
 
 `report sent`按每个会话的本人发送数降序，前20名包含文字和各种附件消息。`report sessions`生成全部对象及严格大于100条的清单；重名对象按ID分开。把生成的文件位置告诉用户。
 
-后端 `exports/media`保存已处理媒体及转写；`exports`保存会话导出与CSV；知识库输出按实际选择的 vault。缓存缺失时报告该条缺失，不用更早的图片替换最近N条。
+后端 `exports/media`保存已处理媒体及转写；`exports`保存会话导出与CSV；知识库输出按实际选择的 vault。最近N条按消息顺序交付，缺失项在对应位置列出。
